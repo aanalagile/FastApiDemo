@@ -1,6 +1,7 @@
 from typing import Union
 
 from fastapi import FastAPI
+import socket
 
 app = FastAPI()
 
@@ -20,10 +21,12 @@ def Fibonacci(n):
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+	ip_address=socket.gethostbyname(socket.gethostname())
+	return {"Hello": f"Ip address is {ip_address}"}
 
 
 @app.get("/fibo/{length}")
 def get_fibonacci(length:int):
-    value = Fibonacci(length)
-    return {"Fibonacci Value is":value}
+	value = Fibonacci(length)
+	ip_address=socket.gethostbyname(socket.gethostname())
+	return {f"From instance with IP: {ip_address},Fibonacci Value is":value}
