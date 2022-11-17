@@ -1,0 +1,15 @@
+
+# to create a new task definition revision which is has updated docker image
+# Task.json will contain the task definition with json
+
+aws ecs register-task-definition --region "us-east-1" --cli-input-json file://Task.json
+
+# List task definitions
+aws ecs list-task-definitions
+
+# Update service with new task definition 
+command :
+    aws ecs update-service --cluster {cluster-name} --service {service-name} --task-definition {task-definition:version}
+
+example : 
+    aws ecs update-service --cluster fast-api-cluster --service fast-api-service --task-definition FastApi-New-Task:4
