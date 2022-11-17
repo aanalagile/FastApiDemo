@@ -22,7 +22,7 @@ def Fibonacci(n):
 @app.get("/")
 def read_root():
 	ip_address=socket.gethostbyname(socket.gethostname())
-	return {"Hello": f"DockerBuild-Deployed from code pipeline  IP address Instance is >>>>>> {ip_address}"}
+	return {"Hello": f"Hello from {ip_address}, Docker Build-Deployed from code pipeline"}
 
 
 @app.get("/fibo/{length}")
