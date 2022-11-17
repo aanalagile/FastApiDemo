@@ -1,0 +1,6 @@
+[
+    {
+      "name": "FastApi",
+      "imageUri": "shubhamagile/fastapi-fibonacci:latest"
+    }
+  ]
