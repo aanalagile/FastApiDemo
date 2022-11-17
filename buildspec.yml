@@ -1,9 +1,11 @@
 version: 0.2
+env:
+  shell: bash
 phases:
   pre_build:
     commands:
       - echo Logging in docker hub..
-      - docker login --username shubhamagile --password Shubham@123 
+      - docker login --username shubhamagile --password Shubham@123
   build:
     commands:
       - echo Build started on `date`
